@@ -1,0 +1,41 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        //classpath 'com.android.tools.build:gradle:2.2.0-alpha6'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven {
+            url 'http://oss.sonatype.org/content/repositories/snapshots'
+        }
+
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    jjsonCore = 'io.apptik.json:json-core:1.0.4'
+    jjsonWrapper = 'io.apptik.json:json-wrapper:1.0.4'
+    jjsonSchema = 'io.apptik.json:json-schema:1.0.4'
+    modelGen = 'io.apptik.json:model-generator:1.0.4'
+    jus = 'io.apptik.comm:jus-java:0.7.0.x-SNAPSHOT'
+    retroJus = 'io.apptik.comm:retro-jus:0.7.0.x-SNAPSHOT'
+    rxJus = 'io.apptik.comm:rx-jus:0.7.0.x-SNAPSHOT'
+    jusJjson = 'io.apptik.comm:jus-jjson:0.7.0.x-SNAPSHOT'
+    jusOkhttp = 'io.apptik.comm:jus-okhttp:0.7.0.x-SNAPSHOT'
+
+}
